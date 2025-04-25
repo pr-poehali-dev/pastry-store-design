@@ -4,39 +4,39 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-r from-pink-50 to-purple-100 py-16 overflow-hidden">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mb-10 md:mb-0 z-10">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-800 mb-4">
-            Изысканные десерты <span className="text-purple-600">ручной работы</span>
+    <section className="relative overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-gradient-to-r from-pink-200 via-white to-purple-200 opacity-90"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1929&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundBlendMode: "overlay",
+        }}
+      />
+      
+      <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="max-w-md">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-purple-800">
+            Изысканные десерты ручной работы
           </h1>
-          <p className="text-gray-600 text-lg mb-8 max-w-md">
-            Наслаждайтесь неповторимым вкусом наших кондитерских шедевров,
-            созданных с любовью из натуральных ингредиентов
+          <p className="text-lg mb-8 text-gray-700">
+            Превращаем моменты в сладкие воспоминания. Наши десерты — это произведения искусства с неповторимым вкусом.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex space-x-4">
             <Link
               to="/catalog"
-              className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors shadow-md"
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg"
             >
-              Перейти в каталог
+              Заказать сейчас
             </Link>
             <Link
-              to="/special"
-              className="px-8 py-3 bg-white hover:bg-gray-100 text-pink-600 font-semibold rounded-lg border border-pink-200 transition-colors shadow-sm"
+              to="/about"
+              className="px-6 py-3 rounded-lg bg-white text-purple-600 font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-all transform hover:scale-105"
             >
-              Специальные предложения
+              О нас
             </Link>
           </div>
-        </div>
-        <div className="md:w-1/2 relative">
-          <img
-            src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=2000&auto=format&fit=crop"
-            alt="Ассортимент десертов"
-            className="rounded-lg shadow-xl z-10 relative max-w-md mx-auto"
-          />
-          <div className="absolute -right-10 -top-10 w-40 h-40 bg-pink-100 rounded-full opacity-70"></div>
-          <div className="absolute -left-5 bottom-10 w-24 h-24 bg-purple-100 rounded-full opacity-70"></div>
         </div>
       </div>
     </section>

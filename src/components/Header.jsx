@@ -1,8 +1,10 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur shadow-sm">
       <div className="container mx-auto flex h-16 items-center px-4">
@@ -41,8 +43,62 @@ const Header = () => {
               0
             </span>
           </Link>
+          
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden text-gray-700 hover:text-pink-600"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? "✕" : "☰"}
+          </button>
         </div>
       </div>
+      
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-b border-gray-200 pb-2">
+          <nav className="container mx-auto px-4">
+            <ul className="space-y-2 py-2">
+              <li>
+                <Link 
+                  to="/" 
+                  className="block p-2 text-gray-700 hover:text-pink-600 hover:bg-pink-50 rounded transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Главная
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/catalog" 
+                  className="block p-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Каталог
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/about" 
+                  className="block p-2 text-gray-700 hover:text-pink-600 hover:bg-pink-50 rounded transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  О нас
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/contacts" 
+                  className="block p-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Контакты
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

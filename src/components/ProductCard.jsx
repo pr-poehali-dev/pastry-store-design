@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
           className="w-full h-56 object-cover"
         />
         {product.discount && (
-          <div className="absolute top-3 right-3 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded">
+          <div className="absolute top-3 right-3 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">
             -{product.discount}%
           </div>
         )}
@@ -40,7 +40,7 @@ const ProductCard = ({ product }) => {
               </span>
             )}
           </div>
-          <button className="bg-pink-100 hover:bg-pink-200 text-pink-600 p-2 rounded-lg transition-colors">
+          <button className="bg-pink-100 hover:bg-purple-200 text-purple-600 p-2 rounded-lg transition-colors">
             🛒
           </button>
         </div>

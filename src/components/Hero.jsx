@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-r from-pink-50 to-purple-50 py-16 overflow-hidden">
+    <section className="relative bg-gradient-to-r from-pink-50 to-purple-100 py-16 overflow-hidden">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-10 md:mb-0 z-10">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-800 mb-4">
-            Изысканные десерты <span className="text-pink-600">ручной работы</span>
+            Изысканные десерты <span className="text-purple-600">ручной работы</span>
           </h1>
           <p className="text-gray-600 text-lg mb-8 max-w-md">
             Наслаждайтесь неповторимым вкусом наших кондитерских шедевров,
@@ -17,7 +17,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4">
             <Link
               to="/catalog"
-              className="px-8 py-3 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-lg transition-colors shadow-md"
+              className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors shadow-md"
             >
               Перейти в каталог
             </Link>
@@ -35,8 +35,8 @@ const Hero = () => {
             alt="Ассортимент десертов"
             className="rounded-lg shadow-xl z-10 relative max-w-md mx-auto"
           />
-          <div className="absolute -right-10 -top-10 w-40 h-40 bg-yellow-100 rounded-full opacity-70"></div>
-          <div className="absolute -left-5 bottom-10 w-24 h-24 bg-pink-100 rounded-full opacity-70"></div>
+          <div className="absolute -right-10 -top-10 w-40 h-40 bg-pink-100 rounded-full opacity-70"></div>
+          <div className="absolute -left-5 bottom-10 w-24 h-24 bg-purple-100 rounded-full opacity-70"></div>
         </div>
       </div>
     </section>

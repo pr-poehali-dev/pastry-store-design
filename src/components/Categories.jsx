@@ -2,63 +2,67 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const categories = [
-  {
-    id: 1,
-    name: "Торты",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop",
-    description: "Изысканные торты для особых случаев",
-  },
-  {
-    id: 2,
-    name: "Эклеры",
-    image: "https://images.unsplash.com/photo-1605801675843-c6d5a77a3ed1?q=80&w=1000&auto=format&fit=crop",
-    description: "Нежные эклеры с разнообразными начинками",
-  },
-  {
-    id: 3,
-    name: "Макаруны",
-    image: "https://images.unsplash.com/photo-1571506165871-ee72a35bc9d4?q=80&w=1000&auto=format&fit=crop",
-    description: "Яркие французские пирожные ручной работы",
-  },
-  {
-    id: 4,
-    name: "Пирожные",
-    image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1000&auto=format&fit=crop",
-    description: "Разнообразные пирожные на любой вкус",
-  },
-];
-
 const Categories = () => {
+  const categories = [
+    {
+      id: 1,
+      name: "Торты",
+      image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop",
+      description: "Изысканные торты для любого праздника",
+      count: 24,
+    },
+    {
+      id: 2,
+      name: "Макаруны",
+      image: "https://images.unsplash.com/photo-1558326567-98166332163b?q=80&w=1000&auto=format&fit=crop",
+      description: "Нежные французские пирожные",
+      count: 16,
+    },
+    {
+      id: 3,
+      name: "Эклеры",
+      image: "https://images.unsplash.com/photo-1626803775151-61d756612f97?q=80&w=1000&auto=format&fit=crop",
+      description: "Классические французские десерты",
+      count: 12,
+    },
+  ];
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif font-bold text-center text-gray-800 mb-3">
-          Наши категории
+        <h2 className="text-3xl font-serif font-bold text-center mb-12 text-gray-800">
+          Наши <span className="text-pink-600">категории</span>
         </h2>
-        <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Выберите категорию и откройте для себя разнообразие вкусов и форм наших кондитерских изделий
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((category) => (
-            <Link 
-              key={category.id} 
-              to={`/catalog/${category.name.toLowerCase()}`}
-              className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+            <Link
+              to={`/category/${category.id}`}
+              key={category.id}
+              className="group block"
             >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-serif font-bold text-gray-800 mb-2 group-hover:text-pink-600 transition duration-300">
-                  {category.name}
-                </h3>
-                <p className="text-gray-600">{category.description}</p>
+              <div className="bg-gradient-to-br from-white to-pink-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 h-full">
+                <div className="relative h-64 overflow-hidden">
+                  <div className="absolute inset-0 bg-purple-600 opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-serif font-semibold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                    {category.name}
+                  </h3>
+                  <p className="text-gray-600 mb-3">{category.description}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-500">
+                      {category.count} видов
+                    </span>
+                    <span className="text-pink-600 group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
